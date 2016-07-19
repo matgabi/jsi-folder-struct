@@ -1,4 +1,4 @@
-const folders = directories: [
+const folders =  [
       {
         type: 'dir',
         name: 'app',
