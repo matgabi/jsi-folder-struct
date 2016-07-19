@@ -57,6 +57,12 @@ const folders =  [
       }
     ]
 let list = "";
+let names = [];
+
+let a =  "<ul class ='folder-container'><li class='folder-item'>";
+let b = "</ul>";
+let c = "<li class = 'folder-wrapper file-item'>";
+let d = "</li>";
 function goTrough(dir){
   if(dir instanceof Object){
 
