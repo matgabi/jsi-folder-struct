@@ -56,3 +56,34 @@ const folders =  [
         ]
       }
     ]
+let list = "";
+function goTrough(dir){
+  if(dir instanceof Object){
+
+    for(prop in dir){
+      if(prop == 'type'){
+        if( dir[prop] == 'dir'){
+          list += a;
+        }
+        else{
+          list += c;
+        }
+      }
+      else if(prop == 'name'){
+        names.push(dir[prop]);
+        list += dir[prop] + d ;
+      }
+      else{
+        goTrough(dir[prop]);
+      }
+    }
+
+    if( dir instanceof Array){
+      list += b;
+    }
+
+  }
+}
+goTrough(folders);
+var htmlFolder = document.getElementsByClassName('folder')[0];
+htmlFolder.innerHTML = list;
