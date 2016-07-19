@@ -1,61 +1,122 @@
-const folders =  [
+const folders = [
+  {
+    type: 'dir',
+    name: 'app',
+    children: [
+      {
+        type: 'file',
+        name: 'index.html'
+      },
       {
         type: 'dir',
-        name: 'app',
+        name: 'js',
         children: [
           {
             type: 'file',
-            name: 'index.html'
+            name: 'main.js'
+          },
+          {
+            type: 'file',
+            name: 'app.js'
+          },
+          {
+            type: 'file',
+            name: 'misc.js'
           },
           {
             type: 'dir',
-            name: 'js',
+            name: 'vendor',
             children: [
               {
                 type: 'file',
-                name: 'main.js'
+                name: 'jquery.js'
               },
               {
                 type: 'file',
-                name: 'app.js'
-              },
-              {
-                type: 'file',
-                name: 'misc.js'
-              },
-              {
-                type: 'dir',
-                name: 'vendor',
-                children: [
-                  {
-                    type: 'file',
-                    name: 'jquery.js'
-                  },
-                  {
-                    type: 'file',
-                    name: 'underscore.js'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            type: 'dir',
-            name: 'css',
-            children: [
-              {
-                type: 'file',
-                name: 'reset.css'
-              },
-              {
-                type: 'file',
-                name: 'main.css'
+                name: 'underscore.js'
               }
             ]
           }
         ]
+      },
+      {
+        type: 'dir',
+        name: 'css',
+        children: [
+          {
+            type: 'file',
+            name: 'reset.css'
+          },
+          {
+            type: 'file',
+            name: 'main.css'
+          }
+        ]
       }
     ]
+  },
+  {
+    type : 'dir',
+    name : 'mere',
+    children :[
+      {
+        type: 'file',
+        name: 'mere.bune'
+      },
+      {
+        type : 'file',
+        name : 'mere.rele'
+      },
+      {
+        type: 'dir',
+        name: 'pere',
+        children:[
+          {
+            type: 'file',
+            name: 'pere.mere'
+          },
+
+        ]
+      }
+    ]
+  },
+  {
+    type : 'dir',
+    name : 'banane',
+    children :[
+      {
+        type: 'file',
+        name: 'banane.bune'
+      },
+      {
+        type : 'file',
+        name : 'banane.rele'
+      },
+      {
+        type: 'dir',
+        name: 'kiwi',
+        children:[
+          {
+            type: 'file',
+            name: 'hiwi.mere'
+          }
+        ]
+      },
+      {
+        type: 'dir',
+        name: 'caise',
+        children: [
+          {
+            type: 'file',
+            name: 'caise.bune'
+          },
+
+
+        ]
+      }
+    ]
+  }
+];
 let list = "";
 let names = [];
 let matches = [];
@@ -109,7 +170,6 @@ function search(dir,isGood,name){
       }
       else if(prop == 'name'){
         if( dir[prop]==(name)){
-          console.log(dir);
           name = dir[prop];
           isGood = true;
         }
