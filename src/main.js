@@ -58,7 +58,8 @@ const folders =  [
     ]
 let list = "";
 let names = [];
-
+let matches = [];
+let list2 = "";
 let a =  "<ul class ='folder-container'><li class='folder-item'>";
 let b = "</ul>";
 let c = "<li class = 'folder-wrapper file-item'>";
@@ -93,3 +94,39 @@ function goTrough(dir){
 goTrough(folders);
 var htmlFolder = document.getElementsByClassName('folder')[0];
 htmlFolder.innerHTML = list;
+function search(dir,isGood,name){
+  if(dir instanceof Object){
+    for(prop in dir){
+      if( prop == 'type'){
+        if(isGood){
+          if(dir[prop] == 'dir'){
+            list2 += a;
+          }
+          else {
+            list2 += c;
+          }
+        }
+      }
+      else if(prop == 'name'){
+        if( dir[prop]==(name)){
+          console.log(dir);
+          name = dir[prop];
+          isGood = true;
+        }
+        if(isGood){
+          var x = matches.indexOf(dir[prop]);
+          if( x != -1)
+            matches.splice(x,1,"");
+
+          list2 += dir[prop] + d;
+        }
+      }
+      else{
+        search(dir[prop],isGood,name)
+      }
+    }
+    if( dir instanceof Array && isGood) {
+      list2 += b;
+    }
+  }
+}
