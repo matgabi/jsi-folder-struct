@@ -130,3 +130,38 @@ function search(dir,isGood,name){
     }
   }
 }
+
+function liveSearch() {
+  var p = document.getElementById("search");
+  p.style.visibility = 'visible';
+  var s = document.getElementById("search1");
+  var name = document.getElementsByTagName('input')[0].value;
+  var htmlFolder = document.getElementsByClassName('folder')[0];
+  htmlFolder.innerHTML = "";
+  if(name == ""){
+    p.style.visibility = 'hidden';
+    var htmlFolder = document.getElementsByClassName('folder')[0];
+    htmlFolder.innerHTML = list;
+  }
+  else{
+
+    s.innerHTML = name;
+    getBestMatch(name);
+    list2 ="";
+    for(let i = 0 ; i < matches.length ; i++){
+      list2 ="";
+      name = matches[i];
+      search(folders,false,name);
+
+      if(name.indexOf('.') != -1)
+        list2 = c + list2;
+      else
+        list2 = a + list2;
+      var htmlFolder = document.getElementsByClassName('folder')[0];
+      htmlFolder.innerHTML += list2;
+    }
+
+  }
+
+
+}
