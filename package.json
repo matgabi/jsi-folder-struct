@@ -7,9 +7,22 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "0.12.x"
+  },
+  "dependencies": {
+    "backbone": "^1.1.2",
+    "browser-sync": "^2.8.2",
+    "chai": "^2.3.0",
+    "expect.js": "0.1.2",
+    "jquery": "^1.11.0",
+    "mocha": "^2.2.4",
+    "sinon": "^1.14.1",
+    "underscore": "1.8.x"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrei-cacio/jsi-folder-struct.git"
+    "url": "git+https://github.com/matgabi/jsi-folder-struct.git"
   },
   "author": "Andrei Cacio <andrei.cacio@yahoo.com> (http://andreicacio.com)",
   "license": "ISC",
