@@ -130,6 +130,14 @@ function search(dir,isGood,name){
     }
   }
 }
+function getBestMatch(name) {
+  matches =[];
+  for(let i = 0 ; i < names.length ; i++){
+    if( names[i].match(name) )
+      matches.push(names[i])
+  }
+
+}
 
 function liveSearch() {
   var p = document.getElementById("search");
