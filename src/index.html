@@ -2,17 +2,20 @@
 <html>
 <head>
 	<title>File structure</title>
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="src/style.css" />
 </head>
 <body>
-<div class="container">
+
+<div class="container" >
 	<div class='widget'>
-      <input placeholder="filter..." type="text"/>
-    </div>
-  <ul class='folder-container'>
-  	<li class='folder-item'></li>
-  	<li class='folder-wrapper'></li>
-  </ul>
+		<input placeholder="Filter..." type="text" value="" onkeyup = "liveSearch()" />
+		<p id = "search">Searching for: <span id ='search1'></span></p>
+	</div>
+	<div class='folder'>
+	</div>
 </div>
+<p id = "mere"></p>
+
+<script src="src/main.js"></script>
 </body>
 </html>
