@@ -128,7 +128,6 @@ let c = "<li class = 'folder-wrapper file-item'>";
 let d = "</li>";
 (function goTrough(dir) {
     if (dir instanceof Object) {
-
         for (prop in dir) {
             if (prop == 'type') {
                 if (dir[prop] == 'dir') {
@@ -150,7 +149,6 @@ let d = "</li>";
         if (dir instanceof Array) {
             list += b;
         }
-
     }
 })(folders)
 htmlFolder.innerHTML = list;
@@ -194,9 +192,7 @@ function getBestMatch(name) {
         if (names[i].match(name))
             matches.push(names[i])
     }
-
 }
-
 function liveSearch() {
     let paragraph = document.getElementById("search");
     paragraph.style.visibility = 'visible';
@@ -209,19 +205,25 @@ function liveSearch() {
         htmlFolder.innerHTML = list;
     }
     else {
-
         s.innerHTML = name;
         getBestMatch(name);
-        list2 = "";
-        for (let i = 0; i < matches.length; i++) {
-            list2 = "";
-            name = matches[i];
-            search(folders, false, name);
-            if (name.indexOf('.') != -1)
-                list2 = c + list2;
-            else
-                list2 = a + list2;
-            htmlFolder.innerHTML += list2;
+        if (matches.length != 0) {
+            for (let i = 0; i < matches.length; i++) {
+                list2 = "";
+                name = matches[i];
+                search(folders, false, name);
+                if (name.indexOf('.') != -1)
+                    list2 = c + list2;
+                else
+                    list2 = a + list2;
+                htmlFolder.innerHTML += list2;
+            }
         }
+        else
+            setTimeout(function () {
+                list2 = "";
+                list2 += "Item not found";
+                htmlFolder.innerHTML = list2;
+            }, 400);
     }
 }
