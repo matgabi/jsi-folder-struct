@@ -50,28 +50,31 @@ body {
     padding-left: 25px;
 }
 
+.folder {
+    margin-left: 10px
+}
+
 .folder-container {
     padding: 0 20px;
-    margin: 0;
+    margin: 0 0 0 4px;
     list-style-type: none;
 }
 
 .folder-wrapper {
     margin: 0;
     padding: 0;
-
 }
 
 .file-item,
 .folder-item {
-    margin-left: -16px;
+    margin-left: -19px;
     padding-left: 20px;
 
     list-style-type: none;
 }
 
 .file-item {
-    margin-left: 0;
+    margin-left: 4px;
     background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsUlEQVQ4T2NkgIKE2q4DMDZW+j+jAgPj//0LmssSkeUZEQZ0/1/QXArnoxuSUNPdwMDIEMDwn2HDgpbSBpg8aQYw/H/PwMCQwMDIMHFBc9kCkCGkGODAwMAAwiBd9TDXYhiQUNtdwPCfgR97ePy7uKClfENCLcK7RLsA2UC8BoADi4HhP44YObigpfTAsHfBgMcC3vwAzze0TAcUuKDrAMN/RlwJCNVcRoaPC5pLA0CCALOMnRHTr6OKAAAAAElFTkSuQmCC') no-repeat left center;
 }
 

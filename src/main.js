@@ -209,14 +209,18 @@ function liveSearch() {
         getBestMatch(name);
         if (matches.length != 0) {
             for (let i = 0; i < matches.length; i++) {
-                list2 = "";
-                name = matches[i];
-                search(folders, false, name);
-                if (name.indexOf('.') != -1)
-                    list2 = c + list2;
-                else
-                    list2 = a + list2;
-                htmlFolder.innerHTML += list2;
+                if (matches[i] != "") {
+                    list2 = "";
+                    name = matches[i];
+                    search(folders, false, name);
+                    if (name.indexOf('.') != -1)
+                        list2 = c + list2;
+                    else
+                        list2 = a + list2;
+                    console.log(list2);
+                    htmlFolder.innerHTML += list2;
+
+                }
             }
         }
         else
