@@ -92,3 +92,6 @@ body {
     color: grey;
     visibility: hidden;
 }
+li:hover {
+    opacity: 0.3;
+}
