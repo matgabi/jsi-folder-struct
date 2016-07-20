@@ -29,6 +29,7 @@ body {
 }
 
 .widget {
+    opacity: 0.9;
     width: 60%;
     padding: 18px;
     background-color: #fff;
