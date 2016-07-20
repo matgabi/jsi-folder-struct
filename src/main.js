@@ -217,7 +217,6 @@ function liveSearch() {
                         list2 = c + list2;
                     else
                         list2 = a + list2;
-                    console.log(list2);
                     htmlFolder.innerHTML += list2;
 
                 }
