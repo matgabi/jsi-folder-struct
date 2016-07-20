@@ -9,7 +9,7 @@ browserSync.init({
         baseDir: __dirname,
         index: 'src/index.html'
     },
-    files: ['src/**/*.html','src/**/*.css','src/**/*.js'],
+    files: ['src/**/*.html', 'src/**/*.css', 'src/**/*.js'],
     host: host,
     port: port,
     open: false,
