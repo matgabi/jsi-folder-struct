@@ -1,11 +1,70 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "untitled-font-1";
+    src:url("../fonts/untitled-font-1.eot");
+    src:url("../fonts/untitled-font-1.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/untitled-font-1.woff") format("woff"),
+    url("../fonts/untitled-font-1.ttf") format("truetype"),
+    url("../fonts/untitled-font-1.svg#untitled-font-1") format("svg");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+[data-icon]:before {
+    font-family: "untitled-font-1" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    font-family: "untitled-font-1" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search-plus:before {
+    content: "\61";
+}
+.icon-search:before {
+    content: "\62";
+}
+.icon-search-minus:before {
+    content: "\63";
+}
+.icon-apple:before {
+    content: "\64";
+}
+
+
+
+
+
+
+
 html {
-    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 body {
     background: url(http://samratcliffe.github.io/images/spotifybg.png) no-repeat;
     background-size: cover;
-    position: fixed;
     z-index: -1;
     margin: 0;
     display: flex;
@@ -29,11 +88,12 @@ body {
 }
 
 .widget {
+    position: relative;
     opacity: 0.9;
     width: 60%;
     padding: 18px;
-    background-color: #fff;
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2), -1px 1px 15px rgba(0, 0, 0, 0.44);
+    background-color: transparent;
+    box-shadow: 1px 1px 10px rgba(256, 256, 256, 0.2), -1px 0px 15px rgba(256, 256, 256, 0.44);
     margin: 10px;
     transition: width 0.5s ease-in-out;
 
@@ -42,21 +102,31 @@ body {
 .widget:hover {
     width: 93%;
 }
-
+.widget::before{
+    font-family: untitled-font-1;
+    content: '\62';
+    position: absolute;
+    top:25px;
+    left: 10px;
+    font-size: 25px;
+}
 .widget > input {
 
+    color: #E9E9E9;
     width: 95%;
     min-height: 30px;
     margin-bottom: 20px;
     border: 0 none;
     border-bottom: 1px solid #ccc;
     outline: none;
-    background: transparent url('/src/searchicon.png') no-repeat left center;
-    padding-left: 25px;
+    background: transparent;
+    margin-left: 21px;
+
 }
 
 .folder {
     margin-left: 10px
+    max-width:100%;
 }
 
 .folder-container {
@@ -95,4 +165,11 @@ body {
 }
 li:hover {
     opacity: 0.3;
+}
+
+
+h1:before{
+    content: "\64";
+    font-family: "untitled-font-1";
+
 }
