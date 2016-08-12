@@ -218,7 +218,6 @@ function liveSearch() {
                     else
                         list2 = a + list2;
                     htmlFolder.innerHTML += list2;
-
                 }
             }
         }
